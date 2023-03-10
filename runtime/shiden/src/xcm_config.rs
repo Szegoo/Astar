@@ -27,13 +27,15 @@ use frame_support::{
     weights::Weight,
 };
 
+use pallet_nf_adapter::NonFungiblesTransactor;
+
 // Polkadot imports
 use xcm::latest::prelude::*;
 use xcm_builder::{
     Account32Hash, AccountId32Aliases, AllowKnownQueryResponses, AllowSubscriptionsFrom,
     AllowTopLevelPaidExecutionFrom, AllowUnpaidExecutionFrom, ConvertedConcreteAssetId,
     CurrencyAdapter, EnsureXcmOrigin, FixedWeightBounds, FungiblesAdapter, IsConcrete,
-    LocationInverter, ParentAsSuperuser, ParentIsPreset, RelayChainAsNative,
+    LocationInverter, ParentAsSuperuser, ParentIsPreset, RelayChainAsNative, NonFungiblesAdapter,
     SiblingParachainAsNative, SiblingParachainConvertsVia, SignedAccountId32AsNative,
     SignedToAccountId32, SovereignSignedViaLocation, TakeWeightCredit, UsingComponents,
 };
@@ -78,7 +80,7 @@ pub type CurrencyTransactor = CurrencyAdapter<
     (),
 >;
 
-/// Means for transacting assets besides the native currency on this chain.
+/// Means for transacting fungible assets besides the native currency on this chain.
 pub type FungiblesTransactor = FungiblesAdapter<
     // Use this fungibles implementation:
     Assets,
@@ -95,7 +97,7 @@ pub type FungiblesTransactor = FungiblesAdapter<
 >;
 
 /// Means for transacting assets on this chain.
-pub type AssetTransactors = (CurrencyTransactor, FungiblesTransactor);
+pub type AssetTransactors = (CurrencyTransactor, FungiblesTransactor, NonFungiblesTransactor);
 
 /// This is the type we use to convert an (incoming) XCM origin into a local `Origin` instance,
 /// ready for dispatching a transaction with Xcm's `Transact`. There is an `OriginKind` which can
