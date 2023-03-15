@@ -35,7 +35,7 @@ use xcm_builder::{
     Account32Hash, AccountId32Aliases, AllowKnownQueryResponses, AllowSubscriptionsFrom,
     AllowTopLevelPaidExecutionFrom, AllowUnpaidExecutionFrom, ConvertedConcreteAssetId,
     CurrencyAdapter, EnsureXcmOrigin, FixedWeightBounds, FungiblesAdapter, IsConcrete,
-    LocationInverter, ParentAsSuperuser, ParentIsPreset, RelayChainAsNative, NonFungiblesAdapter,
+    LocationInverter, ParentAsSuperuser, ParentIsPreset, RelayChainAsNative,
     SiblingParachainAsNative, SiblingParachainConvertsVia, SignedAccountId32AsNative,
     SignedToAccountId32, SovereignSignedViaLocation, TakeWeightCredit, UsingComponents,
 };
@@ -97,7 +97,11 @@ pub type FungiblesTransactor = FungiblesAdapter<
 >;
 
 /// Means for transacting assets on this chain.
-pub type AssetTransactors = (CurrencyTransactor, FungiblesTransactor, NonFungiblesTransactor);
+pub type AssetTransactors = (
+    CurrencyTransactor,
+    FungiblesTransactor,
+    NonFungiblesTransactor,
+);
 
 /// This is the type we use to convert an (incoming) XCM origin into a local `Origin` instance,
 /// ready for dispatching a transaction with Xcm's `Transact`. There is an `OriginKind` which can

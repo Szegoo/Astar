@@ -103,7 +103,7 @@ pallet-precompile-dapps-staking = { git = "https://github.com/AstarNetwork/astar
 pallet-xc-asset-config = { git = "https://github.com/AstarNetwork/astar-frame", branch = "polkadot-v0.9.37", default-features = false }
 pallet-xcm = { git = "https://github.com/AstarNetwork/astar-frame", default-features = false, branch = "polkadot-v0.9.37" }
 xcm-primitives = { git = "https://github.com/AstarNetwork/astar-frame", branch = "polkadot-v0.9.37", default-features = false }
-pallet-nf-adapter = { path = "../../tmp-adapter", default-features = false }
+nf-adapter = { path = "../../tmp-adapter", default-features = false }
 # Remove after migration is done
 pallet-contracts-migration = { path = "../contracts-migration", default-features = false }
 
@@ -116,6 +116,7 @@ std = [
 	"codec/std",
 	"fp-rpc/std",
 	"fp-self-contained/std",
+	"nf-adapter/std",
 	"sp-std/std",
 	"sp-api/std",
 	"sp-core/std",
@@ -157,7 +158,6 @@ std = [
 	"pallet-evm-precompile-xcm/std",
 	"pallet-identity/std",
 	"pallet-multisig/std",
-	"pallet-nf-adapter/std",
 	"pallet-randomness-collective-flip/std",
 	"pallet-session/std",
 	"pallet-utility/std",
@@ -205,7 +205,6 @@ runtime-benchmarks = [
 	"pallet-timestamp/runtime-benchmarks",
 	"pallet-collective/runtime-benchmarks",
 	"pallet-ethereum/runtime-benchmarks",
-	"pallet-xcm/runtime-benchmarks",
 	"xcm-builder/runtime-benchmarks",
 	"pallet-xc-asset-config/runtime-benchmarks",
 	"pallet-collator-selection/runtime-benchmarks",
@@ -233,7 +232,6 @@ try-runtime = [
 	"pallet-authorship/try-runtime",
 	"pallet-collator-selection/try-runtime",
 	"pallet-session/try-runtime",
-	"pallet-xcm/try-runtime",
 	"pallet-identity/try-runtime",
 	"pallet-multisig/try-runtime",
 	"pallet-proxy/try-runtime",
