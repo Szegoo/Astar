@@ -6,9 +6,8 @@ version = "4.50.38"
 
 [dependencies]
 codec = { package = "parity-scale-codec", version = "3.0.0", default-features = false, features = ["derive"] }
-# log = { version = "0.4.16", default-features = false }
+log = { version = "0.4.16", default-features = false }
 scale-info = { version = "2.3.0", default-features = false, features = ["derive"] }
-serde = { version = "1.0.140", optional = true, features = ["derive"] }
 
 frame-support = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.38" }
 frame-system = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.38" }
@@ -16,24 +15,18 @@ sp-core = { git = "https://github.com/paritytech/substrate", default-features = 
 sp-runtime = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.38" }
 sp-std = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.38" }
 
+# polkadot dependencies
+polkadot-primitives = { path = "../../polkadot/primitives", default-features = false }
 xcm = { path = "../../polkadot/xcm", default-features = false }
 xcm-builder = { package = "xcm-builder", path = "../../polkadot/xcm/xcm-builder", default-features = false }
 xcm-executor = { package = "xcm-executor", path = "../../polkadot/xcm/xcm-executor", default-features = false }
-polkadot-primitives = { path = "../../polkadot/primitives", default-features = false }
-
-# [dev-dependencies]
-# pallet-balances = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.38" }
-# polkadot-parachain = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.38" }
-# polkadot-runtime-parachains = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.38" }
-# sp-io = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.38" }
 
 [features]
 default = ["std"]
 std = [
 	"codec/std",
-	# "log/std",
+	"log/std",
 	"scale-info/std",
-	"serde",
 	"sp-std/std",
 	"sp-core/std",
 	"sp-runtime/std",
