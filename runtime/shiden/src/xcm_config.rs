@@ -27,7 +27,7 @@ use frame_support::{
     weights::Weight,
 };
 
-use pallet_nf_adapter::NonFungiblesTransactor;
+use nf_adapter::NonFungiblesTransactor;
 
 // Polkadot imports
 use xcm::latest::prelude::*;

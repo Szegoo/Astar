@@ -8034,18 +8034,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "polkadot-core-primitives"
-version = "0.9.38"
-source = "git+https://github.com/paritytech/polkadot?branch=release-v0.9.38#8deef133d3ca1bdea8c6267c4a66ecabb903a18b"
-dependencies = [
- "parity-scale-codec",
- "scale-info",
- "sp-core 7.0.0 (git+https://github.com/paritytech/substrate?branch=polkadot-v0.9.38)",
- "sp-runtime 7.0.0 (git+https://github.com/paritytech/substrate?branch=polkadot-v0.9.38)",
- "sp-std 5.0.0 (git+https://github.com/paritytech/substrate?branch=polkadot-v0.9.38)",
-]
-
-[[package]]
 name = "polkadot-dispute-distribution"
 version = "0.9.37"
 source = "git+https://github.com/paritytech/polkadot?branch=release-v0.9.37#645723987cf9662244be8faf4e9b63e8b9a1b3a3"
@@ -8600,22 +8588,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "polkadot-parachain"
-version = "0.9.38"
-source = "git+https://github.com/paritytech/polkadot?branch=release-v0.9.38#8deef133d3ca1bdea8c6267c4a66ecabb903a18b"
-dependencies = [
- "derive_more",
- "frame-support 4.0.0-dev (git+https://github.com/paritytech/substrate?branch=polkadot-v0.9.38)",
- "parity-scale-codec",
- "polkadot-core-primitives 0.9.38 (git+https://github.com/paritytech/polkadot?branch=release-v0.9.38)",
- "scale-info",
- "serde",
- "sp-core 7.0.0 (git+https://github.com/paritytech/substrate?branch=polkadot-v0.9.38)",
- "sp-runtime 7.0.0 (git+https://github.com/paritytech/substrate?branch=polkadot-v0.9.38)",
- "sp-std 5.0.0 (git+https://github.com/paritytech/substrate?branch=polkadot-v0.9.38)",
-]
-
-[[package]]
 name = "polkadot-performance-test"
 version = "0.9.37"
 source = "git+https://github.com/paritytech/polkadot?branch=release-v0.9.37#645723987cf9662244be8faf4e9b63e8b9a1b3a3"
@@ -8659,13 +8631,12 @@ dependencies = [
 [[package]]
 name = "polkadot-primitives"
 version = "0.9.38"
-source = "git+https://github.com/paritytech/polkadot?branch=release-v0.9.38#8deef133d3ca1bdea8c6267c4a66ecabb903a18b"
 dependencies = [
  "bitvec",
  "hex-literal",
  "parity-scale-codec",
- "polkadot-core-primitives 0.9.38 (git+https://github.com/paritytech/polkadot?branch=release-v0.9.38)",
- "polkadot-parachain 0.9.38 (git+https://github.com/paritytech/polkadot?branch=release-v0.9.38)",
+ "polkadot-core-primitives 0.9.38",
+ "polkadot-parachain 0.9.38",
  "scale-info",
  "serde",
  "sp-api 4.0.0-dev (git+https://github.com/paritytech/substrate?branch=polkadot-v0.9.38)",

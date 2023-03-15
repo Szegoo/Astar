@@ -19,7 +19,7 @@ sp-std = { git = "https://github.com/paritytech/substrate", default-features = f
 xcm = { path = "../../polkadot/xcm", default-features = false }
 xcm-builder = { package = "xcm-builder", path = "../../polkadot/xcm/xcm-builder", default-features = false }
 xcm-executor = { package = "xcm-executor", path = "../../polkadot/xcm/xcm-executor", default-features = false }
-polkadot-primitives = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.38" }
+polkadot-primitives = { path = "../../polkadot/primitives", default-features = false }
 
 # [dev-dependencies]
 # pallet-balances = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.38" }
